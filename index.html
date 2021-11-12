@@ -16,10 +16,15 @@
         <!-- todo list goes here -->
         <ul>
             <li v-for="(slide, i) in slides" :key="i">
-                <span v-if="slide.done === false">&#x2717;</span>
-                <span v-else class="done">&#10003;</span>{{ slide.text }}
-                <button class="delete" @click="removeTask(i)">Delete task</button>
-                <button @click="markAsDone(i)">Mark as done</button>
+                <div class="flex-container">
+                    <div class="tasks">
+                        <span v-if="slide.done === false">&#x2717;</span>
+                        <span v-else class="done">&#10003;</span>{{ slide.text }}
+                    </div>
+                    <button class="delete" @click="removeTask(i)">Delete task</button>
+                    <button v-if="slide.done === false" class="mark-as" @click="markAsDone(i)">Mark as done</button>
+                    <button v-else class="mark-as" @click="markAsDone(i)">Mark as undone</button>
+                </div>
             </li>
         </ul>
         <label for="new-task">New task</label>

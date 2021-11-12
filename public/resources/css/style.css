@@ -20,6 +20,12 @@ h1 {
     font-size: 1.5rem;
 }
 
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+}
+
 ul {
     padding: 1rem 0;
 }
@@ -27,6 +33,11 @@ ul {
 li {
     list-style-position: inside;
     list-style-type: none;
+    text-align: left;
+}
+
+.tasks {
+    width: 50%;
 }
 
 li, label, button, input {
@@ -35,7 +46,6 @@ li, label, button, input {
 }
 
 span {
-    /* content: '\2717'; */
     display: inline-block;
     color: red;
     padding: 2px 5px;
@@ -54,7 +64,11 @@ span {
 .delete {
     border: none;
     color: black;
-    font-size: 1rem;
+    width: 20%;
+}
+
+.mark-as {
+    width: 25%;
 }
 
 input {
@@ -62,8 +76,10 @@ input {
 }
 
 button {
+    font-size: 1rem;
     border-radius: 4px;
     border: none;
     padding: 0.2rem 1rem;
+    margin: 0 0.5rem;
     cursor: pointer;
 }

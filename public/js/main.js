@@ -15,6 +15,7 @@ const myApp = new Vue({
                 newTaskObj.done = false;
 
                 this.slides.push(newTaskObj);
+                this.newTask = '';
             }
         },
 
@@ -23,7 +24,12 @@ const myApp = new Vue({
         },
 
         markAsDone(index) {
-            this.slides[index].done = true;
+            if (this.slides[index].done === false) {
+                this.slides[index].done = true;
+            } else {
+                this.slides[index].done = false;
+            }
+
         }
     }
 });
