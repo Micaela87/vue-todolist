@@ -6,8 +6,8 @@ while (slides.length < 10) {
 
     };
 
-    newObj.done = true;
-    newObj.text = `task${slides.length}`;
+    newObj.done = false;
+    newObj.text = `task${slides.length + 1}`;
 
     slides.push(newObj);
 }

@@ -14,6 +14,17 @@
     <div id="app" class="container">
         <h1>ToDo List</h1>
         <!-- todo list goes here -->
+        <ul>
+            <li v-for="(slide, i) in slides" :key="i">
+                <span v-if="slide.done === false">&#x2717;</span>
+                <span v-else class="done">&#10003;</span>{{ slide.text }}
+                <button class="delete" @click="removeTask(i)">Delete task</button>
+                <button @click="markAsDone(i)">Mark as done</button>
+            </li>
+        </ul>
+        <label for="new-task">New task</label>
+        <input type="text" v-model="newTask" id="new-task" name="new-task">
+        <button @click="addNewTask">Add new task</button>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="./public/js/script.js" type="text/javascript"></script>
